@@ -1,0 +1,12 @@
+name: 'Auto Assign'
+on:
+  workflow_call:
+
+jobs:
+  assignAuthor:
+    name: Assign author to PR
+    runs-on: ubuntu-latest
+    steps:
+      - name: Assign author to PR
+        if: github.actor != 'scylladbbot'
+        uses: technote-space/assign-author@v1
